@@ -46,7 +46,7 @@ export function MealCard({
     <TooltipProvider>
       <motion.div
         whileHover={{ y: -2, scale: 1.01 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
       >
         <Card
           className={cn(

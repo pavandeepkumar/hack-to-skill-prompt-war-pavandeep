@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   UtensilsCrossed,
   ShoppingCart,
@@ -11,7 +11,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,7 @@ import { MealCard } from "@/components/shared/MealCard";
 import { mockMealPlan, mockGroceryList, mockBudgetData, mockCookingTasks } from "@/lib/mock-data";
 import { formatCurrency } from "@/lib/utils";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -31,7 +30,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
 };
