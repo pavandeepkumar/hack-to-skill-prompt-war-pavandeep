@@ -40,9 +40,9 @@ const addItemSchema = z.object({
     "produce", "proteins", "dairy", "grains", "pantry",
     "frozen", "beverages", "snacks", "condiments", "other",
   ]),
-  quantity: z.coerce.number().min(0.1, "Quantity must be positive"),
+  quantity: z.number({ coerce: true }).min(0.1, "Quantity must be positive"),
   unit: z.string().min(1, "Unit is required"),
-  estimatedPrice: z.coerce.number().min(0, "Price must be non-negative"),
+  estimatedPrice: z.number({ coerce: true }).min(0, "Price must be non-negative"),
   notes: z.string().optional(),
 });
 

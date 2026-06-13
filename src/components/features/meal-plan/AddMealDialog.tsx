@@ -38,11 +38,11 @@ const addMealSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   type: z.enum(["breakfast", "lunch", "dinner", "snack"]),
   description: z.string().min(10, "Description must be at least 10 characters"),
-  prepTime: z.coerce.number().min(0).max(480),
-  cookTime: z.coerce.number().min(0).max(480),
-  servings: z.coerce.number().min(1).max(20),
-  calories: z.coerce.number().min(0).max(5000),
-  cost: z.coerce.number().min(0).max(500),
+  prepTime: z.number({ coerce: true }).min(0).max(480),
+  cookTime: z.number({ coerce: true }).min(0).max(480),
+  servings: z.number({ coerce: true }).min(1).max(20),
+  calories: z.number({ coerce: true }).min(0).max(5000),
+  cost: z.number({ coerce: true }).min(0).max(500),
   ingredients: z.string().min(5, "List at least one ingredient"),
 });
 
